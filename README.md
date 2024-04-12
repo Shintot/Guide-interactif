@@ -1,3 +1,6 @@
+
+<img width="1125" alt="Capture d’écran 2024-04-13 à 01 22 41" src="https://github.com/Shintot/tour/assets/85890290/4e2012d3-2d55-44dd-a3c2-f0577c2d0fff">
+
 # Guide interactif avec React et Tailwind CSS et Joyride
 
 Ce projet est une démonstration d'un guide interactif intégré à une application React, stylisée avec Tailwind CSS. Le guide interactif est implémenté avec le package react-joyride pour fournir des instructions étape par étape aux utilisateurs sur l'utilisation de l'application.
