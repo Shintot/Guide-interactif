@@ -10,18 +10,47 @@ Guide interactif pour aider les utilisateurs à naviguer dans l'application.
 Utilisation de Tailwind CSS pour un design moderne et réactif.
 Personnalisation des étapes du guide pour s'adapter aux composants spécifiques de l'interface utilisateur.
 
-### Installation
+#### Intégrer le guide interactif dans votre projet
 
-    git clone https://github.com/Shintot/tour.git
+Pour intégrer le guide interactif dans votre propre projet, assurez-vous d'abord que les dépendances nécessaires sont installées :
 
-### Installez les dépendances nécessaires avec npm :
+    npm install react-joyride tailwindcss
 
-    npm install
+Ensuite, définissez les étapes spécifiques du guide en créant un tableau `steps`. Chaque objet dans le tableau représente une étape du guide avec un ciblage d'élément (`target`), un contenu explicatif (`content`) et le placement du tooltip (`placement`). Voici un exemple de configuration des étapes :
 
-### Utilisation
+```javascript
+const steps = [
+  {
+    target: '.header-title',
+    content: 'Bienvenue sur notre plateforme! Cette section est pour vous accueillir et donner un aperçu rapide de l’application.',
+    placement: 'bottom'
+  },
+  {
+    target: '.input-field',
+    content: 'Vous pouvez saisir des informations ici. Ce champ est prévu pour des entrées utilisateur comme des noms ou des numéros.',
+    placement: 'bottom'
+  },
+  {
+    target: '.submit-btn',
+    content: 'Cliquez ici pour soumettre vos informations. Assurez-vous de vérifier les données avant de continuer.',
+    placement: 'top'
+  }
+];
+```
+Ensuite, utilisez le composant `Help` pour envelopper les parties de votre application que vous souhaitez inclure dans le guide. Définissez les étapes spécifiques du guide en utilisant le composant `HelpStep` pour cibler les éléments correspondants. Voici un exemple de configuration :
 
-Une fois les dépendances installées, vous pouvez démarrer l'application en mode développement avec la commande suivante :
+```jsx
+<Help steps={steps}>
+  <HelpStep target=".header-title" >
+  </HelpStep>
+  <HelpStep target=".input-field" >
+  </HelpStep>
+  <HelpStep target=".submit-btn">
+  </HelpStep>
+  <HelpTrigger>
+  </HelpTrigger>
+</Help>
 
-    npm start
 
-Cela lancera l'application dans votre navigateur par défaut. Vous pouvez maintenant naviguer dans l'application et tester le guide interactif en cliquant sur le bouton "Démarrer le guide".
+
+
